@@ -21,7 +21,7 @@ import static org.bukkit.Bukkit.getServer;
 
 public class FakeServerBan implements CommandExecutor {
 	private Main plugin;
-	ConsoleCommandSender console = getServer().getConsoleSender();
+	private ConsoleCommandSender console = getServer().getConsoleSender();
 
 
 
@@ -63,7 +63,7 @@ public class FakeServerBan implements CommandExecutor {
 		return true;
 	}
 
-	public void openInventory(final Player player) {
+	private void openInventory(final Player player) {
 		Player target = this.plugin.targetedUser;
 		final Inventory inv = Bukkit.createInventory(null, 27, "FakeServerBan");
 		inv.setItem(10, build(Material.PAPER, "&fHypixel", " ", "&7Click to kick " + target.getName() + " &7with Hypixel message."));
