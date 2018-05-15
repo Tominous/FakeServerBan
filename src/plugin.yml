@@ -1,0 +1,12 @@
+name: FakeServerBan
+version: 0.1
+description: Kick players with the ban message from popular servers!
+author: Nekoli
+
+main: me.nekoli.Main
+
+commands:
+  fakeserverban:
+    aliases: fsb
+    usage: /<command> <player>
+    description: Main Command
