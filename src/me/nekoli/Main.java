@@ -2,6 +2,7 @@ package me.nekoli;
 
 import me.nekoli.methods.InventoryClick;
 import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.PluginManager;
 import me.nekoli.commands.FakeServerBan;
 import org.bukkit.entity.Player;
@@ -9,6 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener {
+	FileConfiguration config = getConfig();
 	private static Main plugin;
 	public Player targetedUser;
 	private ConsoleCommandSender console = getServer().getConsoleSender();
@@ -36,6 +38,7 @@ public class Main extends JavaPlugin implements Listener {
 	private void registerEvents() {
 		final PluginManager pm = this.getServer().getPluginManager();
 		pm.registerEvents(new InventoryClick(this), this);
+
 
 	}
 }

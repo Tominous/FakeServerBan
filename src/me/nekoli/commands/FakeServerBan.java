@@ -31,35 +31,34 @@ public class FakeServerBan implements CommandExecutor {
 
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		if(sender instanceof Player){
-			Player p = (Player) sender;
-		if (cmd.getName().equalsIgnoreCase("FakeServerBan")) {
-			if (sender.hasPermission("fsb.use")) {
-				if (args.length == 0) {
-					sender.sendMessage(ChatColor.RED + "Missing arugments! /FakeServerBan <player>");
-					return true;
+			if (cmd.getName().equalsIgnoreCase("FakeServerBan")) {
+				if (sender.hasPermission("fsb.use")) {
+					if (args.length == 0) {
+						sender.sendMessage(ChatColor.RED + "Missing arguments! /FakeServerBan <player>");
+						return true;
+					}
+					Player target = getServer().getPlayer(args[0]);
+					if (target == null) {
+						sender.sendMessage(ChatColor.RED + "Could not find player " + (args[0]) + "!");
+						return true;
+					}
+					if (args.length == 1) {
+						this.plugin.targetedUser = getServer().getPlayer(args[0]);
+						sender.sendMessage(ChatColor.RED + "Opening FakeServerBan for " + target.getName());
+						openInventory((Player) sender);
+						return true;
+					}
 				}
-				Player target = getServer().getPlayer(args[0]);
-				if (target == null) {
-					sender.sendMessage(ChatColor.RED + "Could not find player " + (args[0]) + "!");
-					return true;
-				}
-				if (args.length == 1) {
-					this.plugin.targetedUser = getServer().getPlayer(args[0]);
-					sender.sendMessage(ChatColor.RED + "Opening FakeServerBan for " + target.getName());
-					openInventory((Player) sender);
-					return true;
+				else if (!sender.hasPermission("fsb.use")) {
+					sender.sendMessage(ChatColor.RED + "You do not have permission to run this command.");
+					console.sendMessage(sender.getName() + " attempted to use the command /fakeserverban!");
 				}
 			}
-			else if (!sender.hasPermission("fsb.use")) {
-				sender.sendMessage(ChatColor.RED + "You do not have permission to run this command.");
-				console.sendMessage(sender.getName() + " attempted to use the command /fakeserverban!");
+			return true;
 			}
-		}
-		return true;
-		}
-		else {
-			sender.sendMessage("Player only command.");
-		}
+			else {
+				sender.sendMessage("Player only command.");
+			}
 		return true;
 	}
 
@@ -74,6 +73,7 @@ public class FakeServerBan implements CommandExecutor {
 		inv.setItem(15, build(Material.PAPER, "&fSkycade", " ", "&7Click to kick " + target.getName() + " &7with Skycade message."));
 		inv.setItem(16, build(Material.PAPER, "&fVeltPvP", " ", "&7Click to kick " + target.getName() + " &7with VeltPvP message."));
 		inv.setItem(21, build(Material.PAPER, "&fInvadedLands", " ", "&7Click to kick " + target.getName() + " &7with InvadedLands message."));
+		//inv.setItem(21, build(Material.BOOK_AND_QUILL, "&cCustom", " ", "&7Click to kick " + target.getName() + " &7with (config.getBoolean()) message."));
 		inv.setItem(23, build(Material.PAPER, "&fMunchyMC", " ", "&7Click to kick " + target.getName() + " &7with MunchyMC message."));
 
 
