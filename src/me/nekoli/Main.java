@@ -4,18 +4,14 @@ import me.nekoli.methods.InventoryClick;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.PluginManager;
 import me.nekoli.commands.FakeServerBan;
-
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class Main extends JavaPlugin implements Listener {
-	public static Main plugin;
+	private static Main plugin;
 	public Player targetedUser;
-	ConsoleCommandSender console = getServer().getConsoleSender();
+	private ConsoleCommandSender console = getServer().getConsoleSender();
 
 	public void onEnable() {
 		console.sendMessage(" ");
@@ -33,11 +29,11 @@ public class Main extends JavaPlugin implements Listener {
 		Main.plugin = null;
 	}
 
-	public void registerCommands() {
+	private void registerCommands() {
 		this.getCommand("FakeServerBan").setExecutor(new FakeServerBan(this));
 	}
 
-	public void registerEvents() {
+	private void registerEvents() {
 		final PluginManager pm = this.getServer().getPluginManager();
 		pm.registerEvents(new InventoryClick(this), this);
 
