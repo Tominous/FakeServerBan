@@ -1,0 +1,35 @@
+# FakeServerBan V0.3 by Nekoli                            #
+# %date% will get the current date.                       #
+# %target% will get the targeted player.                  #
+# /n will tell the ban message to go to next line         #
+#                                                         #
+# Any Suggestions? Contact me via the discussion page!    #
+# https://www.spigotmc.org/resources/fakeserverban.56749/ #
+General:
+  Success: "&aSuccess! %target% was *banned*"
+  Reload: "&aFakeServerBan has been reloaded."
+  OpenGUI: "&cOpening FakeServerBan for %target%"
+  PlayerOnly: "&cPlayer Only Command"
+  NoPermission: "&cYou do not have permission to run this command."
+  NoArgument: "&cMissing arguments! /FakeServerBan <player>"
+  NoPlayer: "&cCould not find player %target%!"
+Hypixel:
+  Message: "&cYou are permanently banned from this server!\n\n&7Reason: &fWATCHDOG CHEAT DETECTION\n&7Find out more: &b&nhttps://www.hypixel.net/watchdog&r\n\n&7Ban ID: &f#54CDF99E\n&7Sharing your Ban ID may affect the processing of your appeal!"
+Mineplex:
+  Message: "&c&lYou are banned for 7.0 days by Mineplex Anti-Cheat\n&f[GWEN] Hacking [MB]\n&2Unfairly banned? Appeal at &awww.mineplex.com/appeals"
+CubeCraft:
+  Message: "&4&lTemporarily Banned!\n\n&cYou have been banned from &9CubeCraft &cfor:\n&6Sentinel caught you cheating! (Anticheat)\n\n&7Your ban will expire in:\n&c29 days and 23 hours\n\n&3You can appeal this ban at:\n&bappeals.cubecraft.net\n&3using the appeal code:\n&d6762"
+GommeHD:
+  Message: "&cDu wurdest &4PERMANENT vom Netzwerk gebannt.\n&3Grund&7:  &cHacking [R:59HHKx66]\n\n&aDu kannst auf &ewww.GommeHD.net &aeinen Entbannungsantrag stellen."
+CosmicPrison:
+  Message: "&6You have been temporarily banned from this server for &eUnfair Advantage&f- To\n&fappeal, post in the appeals section on &bcosmicprisons.com\n\n&e&lTo make an appeal, go to: &b&nforum.cosmicprisons.com\n\n&c&lTo register your forum account, go to:\n&bhttps://goo.gl/uC9Yjb"
+Skycade:
+  Message: "&cYou are banned from this server!\n\n&fBanned on: %date%\n&fBanned by: JackSucksAtMC\n&fReason: Dirty Little Scumbag\n\n&fYou are permanently banned!\n&fAppeal at: &nhttps://skycade.net"
+VeltPvP:
+  Message: "&cYour account has been suspended from the VeltPvP Network\n&cAppeal at veltpvp.com/appeal"
+InvadedLands:
+  Message: "&cYour account has been suspended from the network\n\n&4Banned on: %date%\n&dBanned by: &aStaff\n&bReason: &6Cheating\n\n&cYour account is permanently suspended.\n&aAppeal at: &nwww.invadedlands.net"
+MunchyMC:
+  Message: "&b&l[MunchyMC]\n&cYou have been banned"
+Custom:
+  Message: "oh no\nYou have been banned\n\n\n:("

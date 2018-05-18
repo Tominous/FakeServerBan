@@ -21,6 +21,7 @@ public class Main extends JavaPlugin implements Listener {
 		console.sendMessage(" ");
 		this.registerCommands();
 		this.registerEvents();
+		this.saveDefaultConfig();
 		Main.plugin = this;
 	}
 
@@ -38,7 +39,5 @@ public class Main extends JavaPlugin implements Listener {
 	private void registerEvents() {
 		final PluginManager pm = this.getServer().getPluginManager();
 		pm.registerEvents(new InventoryClick(this), this);
-
-
 	}
 }
